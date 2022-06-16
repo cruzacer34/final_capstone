@@ -187,7 +187,46 @@ class TimeTrackingScreen extends StatelessWidget {
                             ),
                             CustomCircleButton(
                               icon: paperPlaneIcon,
-                              onPressed: () {},
+                              onPressed: () {
+                                showCupertinoModalPopup(
+                                  context: context,
+                                  builder: (context) => Container(
+                                    decoration: topContainerRadius,
+                                    padding: upperContainerPadding,
+                                    height:
+                                        MediaQuery.of(context).size.height / 2,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            RobotoFont(
+                                              text: _todaysDay,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 22,
+                                            ),
+                                            CustomIconButton(
+                                              icon: closeIcon,
+                                              onPressed: () =>
+                                                  Navigator.of(context).pop(),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 5),
+                                        RobotoFont(
+                                          text: _todaysDate,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12,
+                                          fontColor: Colors.grey,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
                               color: Colors.black,
                             ),
                           ],
