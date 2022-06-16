@@ -1,4 +1,6 @@
-import 'package:final_capstone/feature/time_tracking/custom_timeline_connector.dart';
+import 'package:final_capstone/feature/time_tracking/widgets/custom_timeline_connector.dart';
+import 'package:final_capstone/feature/time_tracking/widgets/submit_time_record_modal.dart';
+import 'package:final_capstone/models/profile.dart';
 import 'package:final_capstone/utilities/app_router.dart';
 import 'package:final_capstone/utilities/fonts.dart';
 import 'package:final_capstone/utilities/global_constants.dart';
@@ -187,46 +189,13 @@ class TimeTrackingScreen extends StatelessWidget {
                             ),
                             CustomCircleButton(
                               icon: paperPlaneIcon,
-                              onPressed: () {
-                                showCupertinoModalPopup(
-                                  context: context,
-                                  builder: (context) => Container(
-                                    decoration: topContainerRadius,
-                                    padding: upperContainerPadding,
-                                    height:
-                                        MediaQuery.of(context).size.height / 2,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            RobotoFont(
-                                              text: _todaysDay,
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 22,
-                                            ),
-                                            CustomIconButton(
-                                              icon: closeIcon,
-                                              onPressed: () =>
-                                                  Navigator.of(context).pop(),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 5),
-                                        RobotoFont(
-                                          text: _todaysDate,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12,
-                                          fontColor: Colors.grey,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
+                              onPressed: () => showCupertinoModalPopup(
+                                context: context,
+                                builder: (context) => SubmitTimeRecordModal(
+                                  todaysDay: _todaysDay,
+                                  todaysDate: _todaysDate,
+                                ),
+                              ),
                               color: Colors.black,
                             ),
                           ],
