@@ -1,4 +1,4 @@
-import 'package:final_capstone/feature/time_tracking/custom_timeline_connector.dart';
+import 'package:final_capstone/feature/time_tracking/widgets/custom_timeline_connector.dart';
 import 'package:final_capstone/utilities/app_router.dart';
 import 'package:final_capstone/utilities/fonts.dart';
 import 'package:final_capstone/utilities/global_constants.dart';

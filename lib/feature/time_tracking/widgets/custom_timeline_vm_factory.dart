@@ -1,4 +1,4 @@
-import 'package:final_capstone/feature/time_tracking/custom_timeline_connector.dart';
+import 'package:final_capstone/feature/time_tracking/widgets/custom_timeline_connector.dart';
 import 'package:final_capstone/models/time_record.dart';
 import 'package:final_capstone/state/app_state.dart';
 import 'package:async_redux/async_redux.dart';

@@ -1,4 +1,6 @@
-import 'package:final_capstone/feature/time_tracking/custom_timeline_connector.dart';
+import 'package:final_capstone/feature/time_tracking/widgets/custom_timeline_connector.dart';
+import 'package:final_capstone/feature/time_tracking/widgets/submit_time_record_modal.dart';
+import 'package:final_capstone/models/profile.dart';
 import 'package:final_capstone/utilities/app_router.dart';
 import 'package:final_capstone/utilities/fonts.dart';
 import 'package:final_capstone/utilities/global_constants.dart';
@@ -187,7 +189,13 @@ class TimeTrackingScreen extends StatelessWidget {
                             ),
                             CustomCircleButton(
                               icon: paperPlaneIcon,
-                              onPressed: () {},
+                              onPressed: () => showCupertinoModalPopup(
+                                context: context,
+                                builder: (context) => SubmitTimeRecordModal(
+                                  todaysDay: _todaysDay,
+                                  todaysDate: _todaysDate,
+                                ),
+                              ),
                               color: Colors.black,
                             ),
                           ],
